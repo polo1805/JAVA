@@ -5,9 +5,12 @@
 
 package entidadFinanciera;
 
-
+/**
+ * 
+ * @author Alejandro
+ */
 public class CCuenta {
-
+  
     /**
      * @return the nombre
      */
@@ -87,6 +90,10 @@ public class CCuenta {
      *
      * @param ERRORCANTIDADNEGATIVA new value of ERRORCANTIDADNEGATIVA
      */
+    /**
+     * 
+     * @param ERRORCANTIDADNEGATIVA 
+     */
     public void setERRORCANTIDADNEGATIVA(String ERRORCANTIDADNEGATIVA) {
         this.ERRORCANTIDADNEGATIVA = ERRORCANTIDADNEGATIVA;
     }
@@ -94,25 +101,42 @@ public class CCuenta {
     public CCuenta()
     {
     }
-
+    /**
+     * 
+     * @param nom
+     * @param cue
+     * @param sal
+     * @param tipo 
+     */
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
         nombre =nom;
         cuenta=cue;
         saldo=sal;
     }
-    
+    /**
+     * 
+     * @return 
+     */
     public double estado(){
         return this.getSaldo();
     }
-
+    /**
+     * 
+     * @param cantidad
+     * @throws Exception 
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
     }
-
+    /**
+     * 
+     * @param cantidad
+     * @throws Exception 
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
